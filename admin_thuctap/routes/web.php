@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NhomDoiTuongController;
+use App\Http\Controllers\NghiepVuController;
+use App\Http\Controllers\ThietLapController;
+use App\Http\Controllers\BaoCaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin');
+    return view('thietlap');
 });
+ 
+Route::resource('nhomdoituong', NhomDoiTuongController::class);
+Route::resource('/nghiepvu', NghiepVuController::class);
+Route::resource('/thietlap', ThietLapController::class);
+Route::resource('/baocao', BaoCaoController::class);
